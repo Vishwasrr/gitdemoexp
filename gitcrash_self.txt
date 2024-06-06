@@ -1,0 +1,69 @@
+https://www.simplilearn.com/tutorials/git-tutorial/git-interview-questions
+
+git restore: to revert the changes in a file after a commit
+
+to reverse the added files:
+git reset 
+if the above command doesn't work, try:
+git reset --hard 'HEAD@{1}'
+
+
+locust configuration:
+"args": [
+                "-f",
+                "${file}",
+                "--headless",
+                "--only-summary",
+                "-r 1",
+                "-u 1",
+                "-t 10"
+            ]
+
+
+with $ git push -u origin main if you get this error:
+remote: Repository not found.
+fatal: repository 'https://github.com/Vishwasrr/PytestDDTHybridFW.git~/' not found
+
+try:
+git remote set-url origin https://vishwasrr@github.com/Vishwasrr/PytestDDTHybridFW.git
+
+git remote set-url origin https://username@github.com/Vishwasrr/repoName.git
+
+
+locust -f .\Tag\tagdemo.py -u 1 -r 1 -t 5s --headless --only-summary --exclude-tags post
+
+
+
+A typical scenario: 
+Let's say a developer has worked in a different timezone and he's updated some changes to the code.
+
+You can see those changes in the main branches
+These differences can be updated to our latest repositories with the help of this command:
+git pull 
+
+git branch: to list the branches 
+The one with star is the current branch
+
+git checkout branch_name (checkout to existing branch)
+git checkout -b branch_name (create a new branch and checkout to it)
+
+Let's say you've worked on feature_abc branches and made some changes. But there are some conflicts in the main branch because that code is too different from the code someone else has written. 
+
+This happens when you checkout to main and try to do this:
+(from main branch)
+git merge feature_abc
+
+In git merge, 
+    everything above   <<<<<<<< HEAD 
+    is the stuff from the main part.
+    And everything below it till the ====================
+    is the stuff added by us. 
+    We can discuss this with the maintainer of the main branch and add or remove things accordingly and continue our add and push operation
+
+
+Other important git commands:
+
+soft delete: git branch -d feature_abc (throws an error saying the changes haven't been deleted yet)
+hard delete: git branch -D feature_abc (deletes branch without any warning)
+
+search file with substring: git grep "substring"

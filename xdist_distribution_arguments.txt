@@ -1,0 +1,16 @@
+https://pytest-xdist.readthedocs.io/en/stable/changelog.html#pytest-xdist-3-5-0-2023-11-21
+
+
+https://pytest-xdist.readthedocs.io/en/stable/distribution.html
+
+
+--dist load (default): Sends pending tests to any worker that is available, without any guaranteed order. Scheduling can be fine-tuned with the –maxschedchunk option, see output of pytest –help.
+
+--dist loadscope: Tests are grouped by module for test functions and by class for test methods. Groups are distributed to available workers as whole units. This guarantees that all tests in a group run in the same process. This can be useful if you have expensive module-level or class-level fixtures. Grouping by class takes priority over grouping by module.
+
+--dist loadfile: Tests are grouped by their containing file. Groups are distributed to available workers as whole units. This guarantees that all tests in a file run in the same worker.
+
+--dist loadgroup: Tests are grouped by the xdist_group mark. Groups are distributed to available workers as whole units. This guarantees that all tests with same xdist_group name run in the same worker.
+
+
+pytest -n 2 --dist=loadfile -m "not serial" --browser chrome
