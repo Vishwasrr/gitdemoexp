@@ -37,6 +37,8 @@ ex: git checkout -b expt 3cdcf4f
 if it's been a while:
 You should be able to do git reflog --no-abbrev and find the SHA1 for the commit at the tip of your deleted branch, then just git checkout [sha]. And once you're at that commit, you can just git checkout -b [branchname] to recreate the branch from there.
 
+DELETING BRANCHES
+(Note: You should be in the main branch before deleting other branches)
 soft delete: git branch -d feature_abc (throws an error saying the changes haven't been deleted yet)
 hard delete: git branch -D feature_abc (deletes branch without any warning)
 
@@ -52,6 +54,14 @@ To delete the stashed changes, we can run:
 git stash drop
 
 
+ROLLING BACK:
+If you reset --hard, it will make your local code and local history be just like it was at that commit. But if you wanted to push this to someone else who has the new history, it would fail:
+
+git reset --hard c14809fa
+And if you reset --soft, it will move your HEAD to where they were , but leave your local files etc. the same:
+
+git reset --soft c14809fa
+
 TROUBLESHOOTING COMMANDS
 with $ git push -u origin main if you get this error:
 remote: Repository not found.
@@ -63,7 +73,9 @@ git remote set-url origin https://vishwasrr@github.com/Vishwasrr/PytestDDTHybrid
 git remote set-url origin https://username@github.com/Vishwasrr/repoName.git
 
 
-A typical scenario: 
+
+
+A TYPICAL SCENARIO: 
 Let's say a developer has worked in a different timezone and he's updated some changes to the code.
 
 You can see those changes in the main branches
@@ -89,10 +101,5 @@ In git merge,
     is the stuff added by us. 
     We can discuss this with the maintainer of the main branch and add or remove things accordingly and continue our add and push operation
 
-
-Other important git commands:
-(Note: You should be in the main branch before deleting other branches)
-soft delete: git branch -d feature_abc (throws an error saying the changes haven't been deleted yet)
-hard delete: git branch -D feature_abc (deletes branch without any warning)
-
+SEARCH COMMANDS
 search file with substring: git grep "substring"
