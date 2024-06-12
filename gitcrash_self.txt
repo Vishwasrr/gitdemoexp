@@ -10,18 +10,18 @@ git reset --hard 'HEAD@{1}'
 git log --reflog to list all commits
 (Note: Press q to quit)
 
+pushing things into a new branch (or merging a branch to the main branch)
+git checkout -b <branch_name>
+git pull
+# code modifications
+git add file_name.txt
+git add /folder/file_name.py
+git add /folder/
+git commit -m "udpates made"
+git push origin <branch_name>
 
-locust configuration:
-"args": [
-                "-f",
-                "${file}",
-                "--headless",
-                "--only-summary",
-                "-r 1",
-                "-u 1",
-                "-t 10"
-            ]
-
+git command to create a branch
+git branch [branch_name]
 
 with $ git push -u origin main if you get this error:
 remote: Repository not found.
@@ -31,10 +31,6 @@ try:
 git remote set-url origin https://vishwasrr@github.com/Vishwasrr/PytestDDTHybridFW.git
 
 git remote set-url origin https://username@github.com/Vishwasrr/repoName.git
-
-
-locust -f .\Tag\tagdemo.py -u 1 -r 1 -t 5s --headless --only-summary --exclude-tags post
-
 
 
 A typical scenario: 
