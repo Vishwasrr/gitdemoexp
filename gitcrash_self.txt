@@ -11,6 +11,9 @@ git reset --hard 'HEAD@{1}'
 git log --reflog to list all commits
 (Note: Press q to quit)
 
+git log --all 
+    displays the histroy, tag and reference of all branches     
+
 PUSHING THINGS INTO A NEW BRANCH (OR MERGING A BRANCH TO THE MAIN BRANCH)
 git checkout -b <branch_name>
 git pull
