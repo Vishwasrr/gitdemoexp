@@ -23,6 +23,18 @@ git push origin <branch_name>
 git command to create a branch
 git branch [branch_name]
 
+to save things without commiting:
+git stash 
+(Note: this will remove those changes)
+
+But if you want to bring them back, run:
+git stash pop 
+
+To delete the stashed changes, we can run:
+git stash drop
+
+# adding this line just as an experiment 
+
 with $ git push -u origin main if you get this error:
 remote: Repository not found.
 fatal: repository 'https://github.com/Vishwasrr/PytestDDTHybridFW.git~/' not found
